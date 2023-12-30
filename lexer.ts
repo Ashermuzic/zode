@@ -2,13 +2,19 @@
 // [letToken, IdentifierTk, EqualsToken, NumberToken ]
 
 export enum TokenType {
+  // literal types
   Number,
   Identifier,
+
+  // keyword
+  Let,
+
+  // grouping + operations
+  BinaryOperator,
   Equals,
   OpenParen,
   CloseParen,
-  BinaryOperator,
-  Let,
+  EOF, // signifies the end of file
 }
 
 // reserved keywords
@@ -89,6 +95,9 @@ export function tokenize(sourceCode: string): Token[] {
       }
     }
   }
+
+  // specif the end of the file
+  tokens.push({ type: TokenType.EOF, value: "EndOfFile" });
 
   return tokens;
 }
