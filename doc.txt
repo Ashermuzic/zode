@@ -1,0 +1,14 @@
+- lexer
+
+a way of understanding words in the program by changing to token 
+ex: let x = 45
+    [letToken, IdentifierToken, EqualsToken, NumberToken]
+
+///////////////////////////////////////////////////
+
+- ast
+
+in this language 
+1. statements will not return a value
+    basically meaning you can't do let x = if true 45 else 55
+2. but expression will return a value
